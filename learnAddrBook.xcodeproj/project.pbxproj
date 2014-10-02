@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F632128D19DDB04300AB3648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632128C19DDB04300AB3648 /* AppDelegate.swift */; };
+		F632128F19DDB04300AB3648 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632128E19DDB04300AB3648 /* ViewController.swift */; };
+		F632129219DDB04300AB3648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F632129019DDB04300AB3648 /* Main.storyboard */; };
+		F632129419DDB04300AB3648 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F632129319DDB04300AB3648 /* Images.xcassets */; };
+		F632129719DDB04300AB3648 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F632129519DDB04300AB3648 /* LaunchScreen.xib */; };
+		F63212A319DDB04300AB3648 /* learnAddrBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F632129D19DDB04300AB3648 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F632127F19DDB04200AB3648 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F632128619DDB04200AB3648;
+			remoteInfo = learnAddrBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F632128719DDB04200AB3648 /* learnAddrBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnAddrBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F632128B19DDB04200AB3648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F632128C19DDB04300AB3648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F632128E19DDB04300AB3648 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F632129119DDB04300AB3648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F632129319DDB04300AB3648 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F632129619DDB04300AB3648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F632129C19DDB04300AB3648 /* learnAddrBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learnAddrBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F63212A119DDB04300AB3648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learnAddrBookTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F632128419DDB04200AB3648 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F632129919DDB04300AB3648 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F632127E19DDB04200AB3648 = {
+			isa = PBXGroup;
+			children = (
+				F632128919DDB04200AB3648 /* learnAddrBook */,
+				F632129F19DDB04300AB3648 /* learnAddrBookTests */,
+				F632128819DDB04200AB3648 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F632128819DDB04200AB3648 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F632128719DDB04200AB3648 /* learnAddrBook.app */,
+				F632129C19DDB04300AB3648 /* learnAddrBookTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F632128919DDB04200AB3648 /* learnAddrBook */ = {
+			isa = PBXGroup;
+			children = (
+				F632128C19DDB04300AB3648 /* AppDelegate.swift */,
+				F632128E19DDB04300AB3648 /* ViewController.swift */,
+				F632129019DDB04300AB3648 /* Main.storyboard */,
+				F632129319DDB04300AB3648 /* Images.xcassets */,
+				F632129519DDB04300AB3648 /* LaunchScreen.xib */,
+				F632128A19DDB04200AB3648 /* Supporting Files */,
+			);
+			path = learnAddrBook;
+			sourceTree = "<group>";
+		};
+		F632128A19DDB04200AB3648 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F632128B19DDB04200AB3648 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F632129F19DDB04300AB3648 /* learnAddrBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */,
+				F63212A019DDB04300AB3648 /* Supporting Files */,
+			);
+			path = learnAddrBookTests;
+			sourceTree = "<group>";
+		};
+		F63212A019DDB04300AB3648 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F63212A119DDB04300AB3648 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F632128619DDB04200AB3648 /* learnAddrBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F63212A619DDB04300AB3648 /* Build configuration list for PBXNativeTarget "learnAddrBook" */;
+			buildPhases = (
+				F632128319DDB04200AB3648 /* Sources */,
+				F632128419DDB04200AB3648 /* Frameworks */,
+				F632128519DDB04200AB3648 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = learnAddrBook;
+			productName = learnAddrBook;
+			productReference = F632128719DDB04200AB3648 /* learnAddrBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F632129B19DDB04300AB3648 /* learnAddrBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F63212A919DDB04300AB3648 /* Build configuration list for PBXNativeTarget "learnAddrBookTests" */;
+			buildPhases = (
+				F632129819DDB04300AB3648 /* Sources */,
+				F632129919DDB04300AB3648 /* Frameworks */,
+				F632129A19DDB04300AB3648 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F632129E19DDB04300AB3648 /* PBXTargetDependency */,
+			);
+			name = learnAddrBookTests;
+			productName = learnAddrBookTests;
+			productReference = F632129C19DDB04300AB3648 /* learnAddrBookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F632127F19DDB04200AB3648 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Stanley Chiang";
+				TargetAttributes = {
+					F632128619DDB04200AB3648 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					F632129B19DDB04300AB3648 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = F632128619DDB04200AB3648;
+					};
+				};
+			};
+			buildConfigurationList = F632128219DDB04200AB3648 /* Build configuration list for PBXProject "learnAddrBook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F632127E19DDB04200AB3648;
+			productRefGroup = F632128819DDB04200AB3648 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F632128619DDB04200AB3648 /* learnAddrBook */,
+				F632129B19DDB04300AB3648 /* learnAddrBookTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F632128519DDB04200AB3648 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F632129219DDB04300AB3648 /* Main.storyboard in Resources */,
+				F632129719DDB04300AB3648 /* LaunchScreen.xib in Resources */,
+				F632129419DDB04300AB3648 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F632129A19DDB04300AB3648 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F632128319DDB04200AB3648 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F632128F19DDB04300AB3648 /* ViewController.swift in Sources */,
+				F632128D19DDB04300AB3648 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F632129819DDB04300AB3648 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F63212A319DDB04300AB3648 /* learnAddrBookTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F632129E19DDB04300AB3648 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F632128619DDB04200AB3648 /* learnAddrBook */;
+			targetProxy = F632129D19DDB04300AB3648 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F632129019DDB04300AB3648 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F632129119DDB04300AB3648 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F632129519DDB04300AB3648 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F632129619DDB04300AB3648 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F63212A419DDB04300AB3648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F63212A519DDB04300AB3648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F63212A719DDB04300AB3648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = learnAddrBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F63212A819DDB04300AB3648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = learnAddrBook/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F63212AA19DDB04300AB3648 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = learnAddrBookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/learnAddrBook.app/learnAddrBook";
+			};
+			name = Debug;
+		};
+		F63212AB19DDB04300AB3648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = learnAddrBookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/learnAddrBook.app/learnAddrBook";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F632128219DDB04200AB3648 /* Build configuration list for PBXProject "learnAddrBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F63212A419DDB04300AB3648 /* Debug */,
+				F63212A519DDB04300AB3648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F63212A619DDB04300AB3648 /* Build configuration list for PBXNativeTarget "learnAddrBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F63212A719DDB04300AB3648 /* Debug */,
+				F63212A819DDB04300AB3648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F63212A919DDB04300AB3648 /* Build configuration list for PBXNativeTarget "learnAddrBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F63212AA19DDB04300AB3648 /* Debug */,
+				F63212AB19DDB04300AB3648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F632127F19DDB04200AB3648 /* Project object */;
+}
