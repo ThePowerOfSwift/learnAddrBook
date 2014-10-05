@@ -29,7 +29,7 @@
                     <navigationItem key="navigationItem" id="4jQ-aV-tzm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="b5W-BM-f6I">
                             <connections>
-                                <segue destination="rIb-IX-k3n" kind="show" identifier="showFullList" id="pCZ-dU-feC"/>
+                                <segue destination="xpo-bB-fiA" kind="show" identifier="showFullList" id="vdm-iM-wjZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -41,32 +41,24 @@
             </objects>
             <point key="canvasLocation" x="2196" y="257"/>
         </scene>
-        <!--List-->
-        <scene sceneID="l05-MA-hJW">
+        <!--Full List-->
+        <scene sceneID="yw1-Da-PBS">
             <objects>
-                <tableViewController title="List" id="rIb-IX-k3n" customClass="ListTableViewController" customModule="learnAddrBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pWq-3I-u4c">
+                <viewController title="Full List" id="xpo-bB-fiA" customClass="ListViewController" customModule="learnAddrBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ww5-NK-TyZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="UYb-r5-j0T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cPa-tv-XlT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="h57-Wm-apC">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h57-Wm-apC" id="Syx-BO-ZVH">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="rIb-IX-k3n" id="7e9-S6-Ysj"/>
-                            <outlet property="delegate" destination="rIb-IX-k3n" id="7oO-AZ-hvF"/>
-                        </connections>
-                    </tableView>
+                    </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yfa-0m-SmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lr-G5-eSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2597" y="257"/>
+            <point key="canvasLocation" x="2592" y="257"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gwE-PU-Ddu">

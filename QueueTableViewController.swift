@@ -11,9 +11,6 @@ import AddressBook
 
 class QueueTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
-	var authDone = false
-	var adbk:ABAddressBook!
-	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,45 +19,6 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-		
-//		println("vdl good to go")
-		if !authDone {
-			authDone = true
-			let stat = ABAddressBookGetAuthorizationStatus()
-			switch stat {
-			case .Denied, .Restricted:
-				println("no access")
-			case .Authorized, .NotDetermined:
-				var err:Unmanaged<CFErrorRef>? = nil
-				var adbk: ABAddressBook? = ABAddressBookCreateWithOptions(nil, &err).takeRetainedValue()
-				if adbk == nil {
-					println(err)
-					return
-				}
-				ABAddressBookRequestAccessWithCompletion(adbk) 		{//don't need second param anymore?
-					(granted:Bool, err: CFError!) in
-					if granted {
-						self.adbk = adbk
-					} else {
-						println(err)
-					}
-				}
-			}
-		}
-		var errorRef: Unmanaged<CFError>?
-		var addressBook: ABAddressBookRef?
-		addressBook = extractABAddressBookRef(ABAddressBookCreateWithOptions(nil, &errorRef))
-		var contactList: NSArray = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue()
-
-		println("records in the array \(contactList.count)")
-		
-//		for record:ABRecordRef in contactList {
-//			var contactPerson: ABRecordRef = record
-//			var contactName: String = ABRecordCopyCompositeName(contactPerson).takeRetainedValue() as NSString
-//			println("contactName \(contactName)")
-//			
-//		}
-
     }
 	
 	override func viewDidAppear(animated: Bool) {
@@ -103,19 +61,9 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//		println("prepare for segue entered")
 		if segue.identifier == "showFullList" {
-//			println("segue to show all contacts successfully run")
 		}
 	}
-	
-	func extractABAddressBookRef(abRef: Unmanaged<ABAddressBookRef>!) -> ABAddressBookRef? {
-		if let ab = abRef {
-			return Unmanaged<NSObject>.fromOpaque(ab.toOpaque()).takeUnretainedValue()
-		}
-		return nil
-	}
-	
 	
 	
     /*
