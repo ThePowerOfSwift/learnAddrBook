@@ -16,7 +16,6 @@
 		F632129719DDB04300AB3648 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F632129519DDB04300AB3648 /* LaunchScreen.xib */; };
 		F63212A319DDB04300AB3648 /* learnAddrBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */; };
 		F6A898FB19E0C79C00421DD2 /* QueueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */; };
-		F6A898FD19E0DA2800421DD2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A898FC19E0DA2800421DD2 /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +42,6 @@
 		F63212A119DDB04300AB3648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learnAddrBookTests.swift; sourceTree = "<group>"; };
 		F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueueTableViewController.swift; path = ../QueueTableViewController.swift; sourceTree = "<group>"; };
-		F6A898FC19E0DA2800421DD2 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +88,6 @@
 				F632128C19DDB04300AB3648 /* AppDelegate.swift */,
 				F613753719E0A879005CE7EE /* ContactCell.swift */,
 				F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */,
-				F6A898FC19E0DA2800421DD2 /* ListViewController.swift */,
 				F632129019DDB04300AB3648 /* Main.storyboard */,
 				F632129319DDB04300AB3648 /* Images.xcassets */,
 				F632129519DDB04300AB3648 /* LaunchScreen.xib */,
@@ -228,7 +225,6 @@
 				F613753819E0A879005CE7EE /* ContactCell.swift in Sources */,
 				F632128D19DDB04300AB3648 /* AppDelegate.swift in Sources */,
 				F603922219E198240046AA4D /* README.md in Sources */,
-				F6A898FD19E0DA2800421DD2 /* ListViewController.swift in Sources */,
 				F6A898FB19E0C79C00421DD2 /* QueueTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

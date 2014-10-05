@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import AddressBook
+import AddressBookUI
 
-class QueueTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class QueueTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,42 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 		}
 	}
 	
+	@IBAction func addToQueuePressed(sender: UIBarButtonItem) {
+		let picker = ABPeoplePickerNavigationController()
+		picker.peoplePickerDelegate = self
+		
+		if picker.respondsToSelector(Selector("predicateForEnablingPerson")) {
+			picker.predicateForEnablingPerson = NSPredicate(format: "emailAddresses.@count > 0")
+		}
+		
+		presentViewController(picker, animated: true, completion: nil)
+	}
 	
+	func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecordRef!) {
+		let emails: ABMultiValueRef = ABRecordCopyValue(person, kABPersonEmailProperty).takeRetainedValue()
+		if (ABMultiValueGetCount(emails) > 0) {
+			let index = 0 as CFIndex
+			let email = ABMultiValueCopyValueAtIndex(emails, index).takeRetainedValue() as String
+			
+			println("first email for selected contact = \(email)")
+		} else {
+			println("No email address")
+		}
+	}
+	
+	func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool {
+		
+		peoplePickerNavigationController(peoplePicker, didSelectPerson: person)
+		
+		peoplePicker.dismissViewControllerAnimated(true, completion: nil)
+		
+		return false;
+	}
+	
+	func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
+		peoplePicker.dismissViewControllerAnimated(true, completion: nil)
+	}
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {

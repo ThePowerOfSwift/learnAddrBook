@@ -29,7 +29,7 @@
                     <navigationItem key="navigationItem" id="4jQ-aV-tzm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="b5W-BM-f6I">
                             <connections>
-                                <segue destination="xpo-bB-fiA" kind="show" identifier="showFullList" id="vdm-iM-wjZ"/>
+                                <action selector="addToQueuePressed:" destination="j7M-8l-A2N" id="dIV-3Q-Xmm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -40,25 +40,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk8-WY-meN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2196" y="257"/>
-        </scene>
-        <!--Full List-->
-        <scene sceneID="yw1-Da-PBS">
-            <objects>
-                <viewController title="Full List" id="xpo-bB-fiA" customClass="ListViewController" customModule="learnAddrBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ww5-NK-TyZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="UYb-r5-j0T"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cPa-tv-XlT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1lr-G5-eSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2592" y="257"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gwE-PU-Ddu">
