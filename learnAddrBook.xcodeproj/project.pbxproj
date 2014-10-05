@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F613753819E0A879005CE7EE /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613753719E0A879005CE7EE /* ContactCell.swift */; };
 		F632128D19DDB04300AB3648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632128C19DDB04300AB3648 /* AppDelegate.swift */; };
-		F632128F19DDB04300AB3648 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632128E19DDB04300AB3648 /* ViewController.swift */; };
+		F632128F19DDB04300AB3648 /* QueueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632128E19DDB04300AB3648 /* QueueViewController.swift */; };
 		F632129219DDB04300AB3648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F632129019DDB04300AB3648 /* Main.storyboard */; };
 		F632129419DDB04300AB3648 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F632129319DDB04300AB3648 /* Images.xcassets */; };
 		F632129719DDB04300AB3648 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F632129519DDB04300AB3648 /* LaunchScreen.xib */; };
 		F63212A319DDB04300AB3648 /* learnAddrBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */; };
+		F6A898F919E0C6DD00421DD2 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A898F819E0C6DD00421DD2 /* ListTableViewController.swift */; };
+		F6A898FB19E0C79C00421DD2 /* QueueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +29,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F613753719E0A879005CE7EE /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactCell.swift; path = ../ContactCell.swift; sourceTree = "<group>"; };
 		F632128719DDB04200AB3648 /* learnAddrBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnAddrBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F632128B19DDB04200AB3648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F632128C19DDB04300AB3648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F632128E19DDB04300AB3648 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F632128E19DDB04300AB3648 /* QueueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueViewController.swift; sourceTree = "<group>"; };
 		F632129119DDB04300AB3648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F632129319DDB04300AB3648 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F632129619DDB04300AB3648 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F632129C19DDB04300AB3648 /* learnAddrBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learnAddrBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63212A119DDB04300AB3648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learnAddrBookTests.swift; sourceTree = "<group>"; };
+		F6A898F819E0C6DD00421DD2 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListTableViewController.swift; path = ../ListTableViewController.swift; sourceTree = "<group>"; };
+		F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueueTableViewController.swift; path = ../QueueTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				F632128C19DDB04300AB3648 /* AppDelegate.swift */,
-				F632128E19DDB04300AB3648 /* ViewController.swift */,
+				F613753719E0A879005CE7EE /* ContactCell.swift */,
+				F632128E19DDB04300AB3648 /* QueueViewController.swift */,
+				F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */,
+				F6A898F819E0C6DD00421DD2 /* ListTableViewController.swift */,
 				F632129019DDB04300AB3648 /* Main.storyboard */,
 				F632129319DDB04300AB3648 /* Images.xcassets */,
 				F632129519DDB04300AB3648 /* LaunchScreen.xib */,
@@ -212,8 +221,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F632128F19DDB04300AB3648 /* ViewController.swift in Sources */,
+				F613753819E0A879005CE7EE /* ContactCell.swift in Sources */,
+				F632128F19DDB04300AB3648 /* QueueViewController.swift in Sources */,
 				F632128D19DDB04300AB3648 /* AppDelegate.swift in Sources */,
+				F6A898FB19E0C79C00421DD2 /* QueueTableViewController.swift in Sources */,
+				F6A898F919E0C6DD00421DD2 /* ListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +419,7 @@
 				F63212A819DDB04300AB3648 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F63212A919DDB04300AB3648 /* Build configuration list for PBXNativeTarget "learnAddrBookTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +428,7 @@
 				F63212AB19DDB04300AB3648 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

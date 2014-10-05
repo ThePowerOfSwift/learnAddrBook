@@ -9,13 +9,15 @@
 import UIKit
 import AddressBook
 
-class ViewController: UIViewController {
+class QueueViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+	
 	var authDone = false
 	var adbk:ABAddressBook!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
-	
+		println("vdl good to go")
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -33,7 +35,7 @@ class ViewController: UIViewController {
 					println(err)
 					return
 				}
-				ABAddressBookRequestAccessWithCompletion(adbk) {//don't need second param anymore?
+				ABAddressBookRequestAccessWithCompletion(adbk) 		{//don't need second param anymore?
 					(granted:Bool, err: CFError!) in
 					if granted {
 						self.adbk = adbk
@@ -50,6 +52,30 @@ class ViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		println("prepare for segue entered")
+		if segue.identifier == "showAllContacts" {
+			println("segue to show all contacts successfully run")
+		}
+	}
+	
+	//UITableVuewDataSource
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 5
+	}
+	
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		
+		var cell: ContactCell = tableView.dequeueReusableCellWithIdentifier("listCell") as ContactCell
+		return cell
+	}
+	
+	//UITableViewDelegate
+	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		performSegueWithIdentifier("showAllContacts", sender: self)
+	}
+	
+	
 	@IBAction func loadContactsPressed(sender: UIButton) {
 		var newContact:ABAddressBookRef! = ABPersonCreate().takeRetainedValue()
 		var success:Bool = false

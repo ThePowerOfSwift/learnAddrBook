@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1B3D0405-7242-4B30-B0EC-E4E3AC88C15C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>learnAddrBook</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C6EE77287C268D88266AD6B6593DE875BC3A6CA0</key>
+		<string>http://github.com/stanchiang/learnAddrBook.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>learnAddrBook.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C6EE77287C268D88266AD6B6593DE875BC3A6CA0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://github.com/stanchiang/learnAddrBook.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C6EE77287C268D88266AD6B6593DE875BC3A6CA0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C6EE77287C268D88266AD6B6593DE875BC3A6CA0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>learnAddrBook</string>
+		</dict>
+	</array>
+</dict>
+</plist>
