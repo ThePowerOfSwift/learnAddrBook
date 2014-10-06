@@ -77,15 +77,9 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	}
 	
 	func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecordRef!) {
-		let emails: ABMultiValueRef = ABRecordCopyValue(person, kABPersonEmailProperty).takeRetainedValue()
-		if (ABMultiValueGetCount(emails) > 0) {
-			let index = 0 as CFIndex
-			let email = ABMultiValueCopyValueAtIndex(emails, index).takeRetainedValue() as String
-			
-			println("first email for selected contact = \(email)")
-		} else {
-			println("No email address")
-		}
+		var contact: ABMultiValueRef = ABRecordCopyCompositeName(person).takeRetainedValue()
+		println("just selected: \(contact)")
+		
 	}
 	
 	func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool {

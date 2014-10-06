@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F603922219E198240046AA4D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F603922019E198240046AA4D /* README.md */; };
 		F603922319E198240046AA4D /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F603922119E198240046AA4D /* TemplateIcon2x.png */; };
+		F607634719E2EBBB00C3DCBC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F607634619E2EBBB00C3DCBC /* CoreData.framework */; };
+		F607634A19E2EC9900C3DCBC /* ContactModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F607634819E2EC9900C3DCBC /* ContactModel.xcdatamodeld */; };
 		F613753819E0A879005CE7EE /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613753719E0A879005CE7EE /* ContactCell.swift */; };
 		F632128D19DDB04300AB3648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632128C19DDB04300AB3648 /* AppDelegate.swift */; };
 		F632129219DDB04300AB3648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F632129019DDB04300AB3648 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		F603922019E198240046AA4D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F603922119E198240046AA4D /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
+		F607634619E2EBBB00C3DCBC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F607634919E2EC9900C3DCBC /* ContactModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactModel.xcdatamodel; sourceTree = "<group>"; };
 		F613753719E0A879005CE7EE /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactCell.swift; path = ../ContactCell.swift; sourceTree = "<group>"; };
 		F632128719DDB04200AB3648 /* learnAddrBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnAddrBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F632128B19DDB04200AB3648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F607634719E2EBBB00C3DCBC /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +95,7 @@
 				F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */,
 				F632129019DDB04300AB3648 /* Main.storyboard */,
 				F632129319DDB04300AB3648 /* Images.xcassets */,
+				F607634819E2EC9900C3DCBC /* ContactModel.xcdatamodeld */,
 				F632129519DDB04300AB3648 /* LaunchScreen.xib */,
 				F632128A19DDB04200AB3648 /* Supporting Files */,
 			);
@@ -99,6 +105,7 @@
 		F632128A19DDB04200AB3648 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F607634619E2EBBB00C3DCBC /* CoreData.framework */,
 				F632128B19DDB04200AB3648 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -222,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F607634A19E2EC9900C3DCBC /* ContactModel.xcdatamodeld in Sources */,
 				F613753819E0A879005CE7EE /* ContactCell.swift in Sources */,
 				F632128D19DDB04300AB3648 /* AppDelegate.swift in Sources */,
 				F603922219E198240046AA4D /* README.md in Sources */,
@@ -431,6 +439,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F607634819E2EC9900C3DCBC /* ContactModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F607634919E2EC9900C3DCBC /* ContactModel.xcdatamodel */,
+			);
+			currentVersion = F607634919E2EC9900C3DCBC /* ContactModel.xcdatamodel */;
+			name = ContactModel.xcdatamodeld;
+			path = ../ContactModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F632127F19DDB04200AB3648 /* Project object */;
 }
