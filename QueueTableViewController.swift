@@ -16,6 +16,8 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
 	var fetchedResultsController:NSFetchedResultsController = NSFetchedResultsController()
 	
+	@IBOutlet weak var textField: UITextField!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +30,17 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "showAddManual" {
+			let destVC: ManualViewController = segue.destinationViewController as ManualViewController
+			destVC.rstring = textField.text
+		}
+	}
+	
+	@IBAction func addManuallyPressed(sender: UIButton) {
+		performSegueWithIdentifier("showAddManual", sender: self)
+	}
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -67,9 +79,7 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	}
 	
 	func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool {
-		
 		peoplePickerNavigationController(peoplePicker, didSelectPerson: person)
-		
 		peoplePicker.dismissViewControllerAnimated(true, completion: nil)
 		
 		return false;

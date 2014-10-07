@@ -17,6 +17,7 @@
 		F632129419DDB04300AB3648 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F632129319DDB04300AB3648 /* Images.xcassets */; };
 		F632129719DDB04300AB3648 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F632129519DDB04300AB3648 /* LaunchScreen.xib */; };
 		F63212A319DDB04300AB3648 /* learnAddrBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */; };
+		F6A1CD3119E3821B005269A8 /* ManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A1CD3019E3821B005269A8 /* ManualViewController.swift */; };
 		F6A898FB19E0C79C00421DD2 /* QueueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */; };
 		F6EFDB4419E31D8000E8D40B /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFDB4319E31D8000E8D40B /* ContactModel.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		F632129C19DDB04300AB3648 /* learnAddrBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learnAddrBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63212A119DDB04300AB3648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learnAddrBookTests.swift; sourceTree = "<group>"; };
+		F6A1CD3019E3821B005269A8 /* ManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualViewController.swift; sourceTree = "<group>"; };
 		F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueueTableViewController.swift; path = ../QueueTableViewController.swift; sourceTree = "<group>"; };
 		F6EFDB4319E31D8000E8D40B /* ContactModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 				F613753719E0A879005CE7EE /* ContactCell.swift */,
 				F6EFDB4319E31D8000E8D40B /* ContactModel.swift */,
 				F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */,
+				F6A1CD3019E3821B005269A8 /* ManualViewController.swift */,
 				F632129019DDB04300AB3648 /* Main.storyboard */,
 				F632129319DDB04300AB3648 /* Images.xcassets */,
 				F607634819E2EC9900C3DCBC /* ContactModel.xcdatamodeld */,
@@ -237,6 +240,7 @@
 				F6EFDB4419E31D8000E8D40B /* ContactModel.swift in Sources */,
 				F632128D19DDB04300AB3648 /* AppDelegate.swift in Sources */,
 				F603922219E198240046AA4D /* README.md in Sources */,
+				F6A1CD3119E3821B005269A8 /* ManualViewController.swift in Sources */,
 				F6A898FB19E0C79C00421DD2 /* QueueTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
