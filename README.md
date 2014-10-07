@@ -2,6 +2,13 @@ Feature List from Paul
 
 1. pick from address book
 2. manually enter a number
+-->current status here<--
+a. manually add name
+i. if number wasn't given at the time, tapping name in main list brings you to add a number
+b. dial from app
+i. dialing automatically creates an entry
+ii. if number doesn't match a contact, use number as name till user changes it
+
 3. handleing edge cases: missed call or leaving a message 
 
 a. put them back into the to-call list
