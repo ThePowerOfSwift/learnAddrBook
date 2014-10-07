@@ -8,24 +8,21 @@
 
 import UIKit
 import AddressBookUI
+import CoreData
 
-class QueueTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate {
+class QueueTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, NSFetchedResultsControllerDelegate {
 
+	var contact: ABMultiValueRef!
+	let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+	var fetchedResultsController:NSFetchedResultsController = NSFetchedResultsController()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+		fetchedResultsController = getFetchResultsController()
+		fetchedResultsController.delegate = self
+		fetchedResultsController.performFetch(nil)
     }
-	
-	override func viewDidAppear(animated: Bool) {
-		super.viewDidAppear(animated)
-
-
-	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,51 +32,38 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 1
+		let numberOfSections = fetchedResultsController.sections?.count
+		return numberOfSections!
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 5
-    }
+		let numberOfRowsInSection = fetchedResultsController.sections![section].numberOfObjects
+		return numberOfRowsInSection!
+	}
 
 	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("listCell", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
+		let theContact:ContactModel = fetchedResultsController.objectAtIndexPath(indexPath) as ContactModel
+		
+		let cell: ContactCell = tableView.dequeueReusableCellWithIdentifier("listCell") as ContactCell
+		cell.nameLabel.text = theContact.name
         return cell
     }
-	
-	// UITableViewDelegate
-	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		performSegueWithIdentifier("showFullList", sender: self)
-	}
-	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == "showFullList" {
-		}
-	}
 	
 	@IBAction func addToQueuePressed(sender: UIBarButtonItem) {
 		let picker = ABPeoplePickerNavigationController()
 		picker.peoplePickerDelegate = self
-		
-		if picker.respondsToSelector(Selector("predicateForEnablingPerson")) {
-			picker.predicateForEnablingPerson = NSPredicate(format: "emailAddresses.@count > 0")
-		}
-		
 		presentViewController(picker, animated: true, completion: nil)
 	}
-	
+
 	func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecordRef!) {
-		var contact: ABMultiValueRef = ABRecordCopyCompositeName(person).takeRetainedValue()
-		println("just selected: \(contact)")
-		
+		contact = ABRecordCopyCompositeName(person).takeRetainedValue()
+		let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+		let entityDescription = NSEntityDescription.entityForName("ContactModel", inManagedObjectContext: managedObjectContext)
+		let person = ContactModel(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext)
+		person.name = contact as String
+//		appDelegate.saveContext()   what is the difference between this line and the one below ???
+		managedObjectContext.save(nil)
 	}
 	
 	func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool {
@@ -94,50 +78,22 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	func peoplePickerNavigationControllerDidCancel(peoplePicker: ABPeoplePickerNavigationController!) {
 		peoplePicker.dismissViewControllerAnimated(true, completion: nil)
 	}
+	
+	func controllerDidChangeContent(controller: NSFetchedResultsController) {
+		tableView.reloadData()
+	}
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
+	func contactFetchRequest() -> NSFetchRequest {
+		let fetchRequest = NSFetchRequest(entityName: "ContactModel")
+		let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+		fetchRequest.sortDescriptors = [sortDescriptor]
+		return fetchRequest
+	}
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView!, moveRowAtIndexPath fromIndexPath: NSIndexPath!, toIndexPath: NSIndexPath!) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView!, canMoveRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
+	
+	func getFetchResultsController() -> NSFetchedResultsController {
+		fetchedResultsController = NSFetchedResultsController(fetchRequest: contactFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+		return fetchedResultsController
+	}
 
 }
