@@ -7,19 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F603922219E198240046AA4D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F603922019E198240046AA4D /* README.md */; };
 		F603922319E198240046AA4D /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F603922119E198240046AA4D /* TemplateIcon2x.png */; };
 		F607634719E2EBBB00C3DCBC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F607634619E2EBBB00C3DCBC /* CoreData.framework */; };
-		F607634A19E2EC9900C3DCBC /* ContactModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F607634819E2EC9900C3DCBC /* ContactModel.xcdatamodeld */; };
-		F613753819E0A879005CE7EE /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613753719E0A879005CE7EE /* ContactCell.swift */; };
 		F632128D19DDB04300AB3648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F632128C19DDB04300AB3648 /* AppDelegate.swift */; };
 		F632129219DDB04300AB3648 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F632129019DDB04300AB3648 /* Main.storyboard */; };
 		F632129419DDB04300AB3648 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F632129319DDB04300AB3648 /* Images.xcassets */; };
 		F632129719DDB04300AB3648 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F632129519DDB04300AB3648 /* LaunchScreen.xib */; };
 		F63212A319DDB04300AB3648 /* learnAddrBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */; };
 		F6A1CD3119E3821B005269A8 /* ManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A1CD3019E3821B005269A8 /* ManualViewController.swift */; };
-		F6A898FB19E0C79C00421DD2 /* QueueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */; };
-		F6EFDB4419E31D8000E8D40B /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EFDB4319E31D8000E8D40B /* ContactModel.swift */; };
+		F6EA15E919E4718400D6092B /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613753719E0A879005CE7EE /* ContactCell.swift */; };
+		F6EA15F319E4740800D6092B /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA15F219E4740800D6092B /* Contacts.swift */; };
+		F6EA15F419E4756E00D6092B /* ContactModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6EA15EF19E473DE00D6092B /* ContactModel.xcdatamodeld */; };
+		F6F3B15819E46D35005223CF /* QueueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +35,6 @@
 		F603922019E198240046AA4D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F603922119E198240046AA4D /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TemplateIcon2x.png; path = ../TemplateIcon2x.png; sourceTree = "<group>"; };
 		F607634619E2EBBB00C3DCBC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		F607634919E2EC9900C3DCBC /* ContactModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactModel.xcdatamodel; sourceTree = "<group>"; };
 		F613753719E0A879005CE7EE /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactCell.swift; path = ../ContactCell.swift; sourceTree = "<group>"; };
 		F632128719DDB04200AB3648 /* learnAddrBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnAddrBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F632128B19DDB04200AB3648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,7 +47,8 @@
 		F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learnAddrBookTests.swift; sourceTree = "<group>"; };
 		F6A1CD3019E3821B005269A8 /* ManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualViewController.swift; sourceTree = "<group>"; };
 		F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueueTableViewController.swift; path = ../QueueTableViewController.swift; sourceTree = "<group>"; };
-		F6EFDB4319E31D8000E8D40B /* ContactModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		F6EA15F019E473DE00D6092B /* ContactModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactModel.xcdatamodel; sourceTree = "<group>"; };
+		F6EA15F219E4740800D6092B /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contacts.swift; path = ../Contacts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,14 +92,14 @@
 			isa = PBXGroup;
 			children = (
 				F632128C19DDB04300AB3648 /* AppDelegate.swift */,
-				F613753719E0A879005CE7EE /* ContactCell.swift */,
-				F6EFDB4319E31D8000E8D40B /* ContactModel.swift */,
 				F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */,
 				F6A1CD3019E3821B005269A8 /* ManualViewController.swift */,
 				F632129019DDB04300AB3648 /* Main.storyboard */,
 				F632129319DDB04300AB3648 /* Images.xcassets */,
-				F607634819E2EC9900C3DCBC /* ContactModel.xcdatamodeld */,
+				F613753719E0A879005CE7EE /* ContactCell.swift */,
 				F632129519DDB04300AB3648 /* LaunchScreen.xib */,
+				F6EA15EF19E473DE00D6092B /* ContactModel.xcdatamodeld */,
+				F6EA15F219E4740800D6092B /* Contacts.swift */,
 				F632128A19DDB04200AB3648 /* Supporting Files */,
 			);
 			path = learnAddrBook;
@@ -235,13 +234,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F607634A19E2EC9900C3DCBC /* ContactModel.xcdatamodeld in Sources */,
-				F613753819E0A879005CE7EE /* ContactCell.swift in Sources */,
-				F6EFDB4419E31D8000E8D40B /* ContactModel.swift in Sources */,
+				F6EA15F419E4756E00D6092B /* ContactModel.xcdatamodeld in Sources */,
+				F6EA15E919E4718400D6092B /* ContactCell.swift in Sources */,
+				F6EA15F319E4740800D6092B /* Contacts.swift in Sources */,
+				F6F3B15819E46D35005223CF /* QueueTableViewController.swift in Sources */,
 				F632128D19DDB04300AB3648 /* AppDelegate.swift in Sources */,
-				F603922219E198240046AA4D /* README.md in Sources */,
 				F6A1CD3119E3821B005269A8 /* ManualViewController.swift in Sources */,
-				F6A898FB19E0C79C00421DD2 /* QueueTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,12 +447,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F607634819E2EC9900C3DCBC /* ContactModel.xcdatamodeld */ = {
+		F6EA15EF19E473DE00D6092B /* ContactModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F607634919E2EC9900C3DCBC /* ContactModel.xcdatamodel */,
+				F6EA15F019E473DE00D6092B /* ContactModel.xcdatamodel */,
 			);
-			currentVersion = F607634919E2EC9900C3DCBC /* ContactModel.xcdatamodel */;
+			currentVersion = F6EA15F019E473DE00D6092B /* ContactModel.xcdatamodel */;
 			name = ContactModel.xcdatamodeld;
 			path = ../ContactModel.xcdatamodeld;
 			sourceTree = "<group>";

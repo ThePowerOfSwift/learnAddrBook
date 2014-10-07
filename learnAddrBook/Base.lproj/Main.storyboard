@@ -7,7 +7,7 @@
         <!--Queue-->
         <scene sceneID="jI3-x4-EyL">
             <objects>
-                <tableViewController title="Queue" id="j7M-8l-A2N" customClass="QueueTableViewController" customModule="learnAddrBook" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Queue" id="j7M-8l-A2N" customClass="QueueTableViewController" customModule="learnAddrBook" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lMi-CL-uAG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -16,6 +16,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nn1-bm-LA2" customClass="PassingText" customModule="learnAddrBook" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="7" width="245" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9a-oo-4wS">
                                     <rect key="frame" x="261" y="8" width="51" height="30"/>
                                     <state key="normal" title="Add">
@@ -26,11 +31,6 @@
                                         <segue destination="R6I-fL-x6v" kind="show" identifier="showAddManual" id="wCd-hv-dBd"/>
                                     </connections>
                                 </button>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nn1-bm-LA2" customClass="PassingText" customModule="learnAddrBook" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="7" width="245" height="30"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -41,17 +41,24 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oh1-ck-CAM" id="RfE-1A-pBE">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="memo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRx-XP-Yu9">
+                                            <rect key="frame" x="20" y="23" width="244" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVa-eI-Znh">
-                                            <rect key="frame" x="20" y="11" width="176" height="21"/>
+                                            <rect key="frame" x="20" y="0.0" width="176" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.98005019299999996" blue="0.44444492590000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="nameLabel" destination="KVa-eI-Znh" id="5TD-2F-oms"/>
+                                    <outlet property="memoLabel" destination="JRx-XP-Yu9" id="hkP-W3-qfO"/>
+                                    <outlet property="nameLabel" destination="KVa-eI-Znh" id="HS0-uT-JKm"/>
+                                    <segue destination="R6I-fL-x6v" kind="show" identifier="showEdit" id="vw7-dS-reB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -74,12 +81,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk8-WY-meN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="216" y="-94"/>
+            <point key="canvasLocation" x="216" y="-95"/>
         </scene>
         <!--Manual View Controller-->
         <scene sceneID="hJk-xV-vaG">
             <objects>
-                <viewController id="R6I-fL-x6v" customClass="ManualViewController" customModule="learnAddrBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="R6I-fL-x6v" customClass="ManualViewController" customModule="learnAddrBook" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RA3-Ln-K9t"/>
                         <viewControllerLayoutGuide type="bottom" id="VWB-8o-Qrh"/>
@@ -116,26 +123,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VaO-My-0kg">
+                                <rect key="frame" x="16" y="220" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
+                            </textField>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uXX-ym-USG">
                                 <rect key="frame" x="0.0" y="374" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="434345640.274041">
                                     <!--2014-10-07 03:34:00 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VaO-My-0kg">
-                                <rect key="frame" x="16" y="220" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="deK-OW-PHl">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="cBd-45-fMN"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="cBd-45-fMN">
+                            <connections>
+                                <action selector="donePressed:" destination="R6I-fL-x6v" id="PGZ-ZG-XZr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="datePicker" destination="uXX-ym-USG" id="C9x-1G-zSS"/>
+                        <outlet property="memoField" destination="kAp-91-f9i" id="mIw-ov-h6l"/>
+                        <outlet property="nameField" destination="NYT-jV-NwA" id="1fe-2f-OKB"/>
+                        <outlet property="phoneField" destination="VaO-My-0kg" id="Qh0-Mh-EBv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqf-kl-L7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,4 +178,7 @@
             <point key="canvasLocation" x="-200" y="-93"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vw7-dS-reB"/>
+    </inferredMetricsTieBreakers>
 </document>

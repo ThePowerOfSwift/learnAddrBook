@@ -32,17 +32,23 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
     }
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		let destVC: ManualViewController = segue.destinationViewController as ManualViewController
+
 		if segue.identifier == "showAddManual" {
-			let destVC: ManualViewController = segue.destinationViewController as ManualViewController
 			destVC.rstring = textField.text
+			destVC.isNew = true
+		} else if segue.identifier == "showEdit" {
+			destVC.isNew = false
+			let indexPath = tableView.indexPathForSelectedRow()
+			let cell = fetchedResultsController.objectAtIndexPath(indexPath!) as Contacts
+			destVC.contact = cell
 		}
 	}
 	
 	@IBAction func addManuallyPressed(sender: UIButton) {
-		performSegueWithIdentifier("showAddManual", sender: self)
 	}
     // MARK: - Table view data source
-
+	
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		let numberOfSections = fetchedResultsController.sections?.count
 		return numberOfSections!
@@ -55,10 +61,11 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 
 	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let theContact:ContactModel = fetchedResultsController.objectAtIndexPath(indexPath) as ContactModel
+		let theContact = fetchedResultsController.objectAtIndexPath(indexPath) as Contacts
 		
-		let cell: ContactCell = tableView.dequeueReusableCellWithIdentifier("listCell") as ContactCell
+		var cell: ContactCell = tableView.dequeueReusableCellWithIdentifier("listCell") as ContactCell
 		cell.nameLabel.text = theContact.name
+		cell.memoLabel.text = theContact.memo
         return cell
     }
 	
@@ -71,11 +78,11 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecordRef!) {
 		contact = ABRecordCopyCompositeName(person).takeRetainedValue()
 		let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-		let entityDescription = NSEntityDescription.entityForName("ContactModel", inManagedObjectContext: managedObjectContext)
-		let person = ContactModel(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext)
+		let entityDescription = NSEntityDescription.entityForName("Contacts", inManagedObjectContext: managedObjectContext)
+		let person = Contacts(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext) as Contacts
 		person.name = contact as String
-//		appDelegate.saveContext()   what is the difference between this line and the one below ???
-		managedObjectContext.save(nil)
+		appDelegate.saveContext()   //what is the difference between this line and the one below ???
+		//managedObjectContext.save(nil)
 	}
 	
 	func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool {
@@ -94,7 +101,7 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	}
 
 	func contactFetchRequest() -> NSFetchRequest {
-		let fetchRequest = NSFetchRequest(entityName: "ContactModel")
+		let fetchRequest = NSFetchRequest(entityName: "Contacts")
 		let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
 		fetchRequest.sortDescriptors = [sortDescriptor]
 		return fetchRequest
@@ -105,5 +112,5 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 		fetchedResultsController = NSFetchedResultsController(fetchRequest: contactFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
 		return fetchedResultsController
 	}
-
+	
 }

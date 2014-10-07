@@ -2,12 +2,12 @@ Feature List from Paul
 
 1. pick from address book
 2. manually enter a number
--->current status here<--
 a. manually add name
-i. if number wasn't given at the time, tapping name in main list brings you to add a number
-b. dial from app
-i. dialing automatically creates an entry
-ii. if number doesn't match a contact, use number as name till user changes it
+-->current status here<--
+i. if number wasn't given at the time, tapping name in main list brings you to add a number--(coredata)
+b. dial from app--(url scheme)
+i. dialing automatically creates an entry--(figure out how to do core data in background)
+ii. if number doesn't match a contact, use number as name till user changes it--(use the same value to set 2 diff fields)
 
 3. handleing edge cases: missed call or leaving a message 
 
