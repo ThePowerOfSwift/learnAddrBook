@@ -24,6 +24,8 @@ class ManualViewController: UIViewController {
         super.viewDidLoad()
 		if isNew! {
 			nameField.text = rstring!
+		} else if contact.phone != "" {
+			UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(contact.phone)"))
 		} else {
 			nameField.text = contact.name
 			memoField.text = contact.memo
