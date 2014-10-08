@@ -6,12 +6,15 @@ a. manually add name
 b. dial from app--(url scheme)
 i. dialing automatically creates an entry--(figure out how to do core data in background)
 -->current status here<--
+ii. add second tab and array 
 3. handleing edge cases: missed call or leaving a message 
 
 a. put them back into the to-call list
 b. mark it as left a message and done
 c. no answer so can i text or imessage them instead
 d. spoke to person, add some notes to the call
+
+
 
 4. logging calls via evernote
 
