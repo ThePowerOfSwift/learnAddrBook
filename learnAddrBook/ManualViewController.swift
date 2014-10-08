@@ -22,19 +22,23 @@ class ManualViewController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		if isNew! {
+		println(contact.name)
+		if isNew! {//newly added from textfield
 			nameField.text = rstring!
-		} else if contact.phone != "" {
-			UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(contact.phone)"))
-		} else {
+		} else if contact.phone? == nil  || contact.phone? == Optional(""){//added from AB, need to take directly here later on
+				nameField.text = contact.name
+				memoField.text = contact.memo
+				phoneField.text = contact.phone
+		} else {//dial out
 			nameField.text = contact.name
 			memoField.text = contact.memo
 			phoneField.text = contact.phone
+
+			UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(contact.phone!)"))
 		}
-        // Do any additional setup after loading the view
     }
 
-    override func didReceiveMemoryWarning() {
+	override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -67,11 +71,6 @@ class ManualViewController: UIViewController {
 		contact.name = nameField.text
 		contact.memo = memoField.text
 		contact.phone = phoneField.text
-//		println(contact.name)
-//		println(contact.memo)
-//
-//		println(nameField.text)
-//		println(memoField.text)
 
 		appDelegate.saveContext()
 	}

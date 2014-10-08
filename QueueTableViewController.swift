@@ -15,7 +15,7 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	var contact: ABMultiValueRef!
 	let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
 	var fetchedResultsController:NSFetchedResultsController = NSFetchedResultsController()
-	
+	var person: Contacts!
 	@IBOutlet weak var textField: UITextField!
 	
     override func viewDidLoad() {
@@ -41,8 +41,12 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 			let destVC: ManualViewController = segue.destinationViewController as ManualViewController
 			destVC.isNew = false
 			let indexPath = tableView.indexPathForSelectedRow()
-			let cell = fetchedResultsController.objectAtIndexPath(indexPath!) as Contacts
-			destVC.contact = cell
+			if indexPath? == nil {
+				destVC.contact = person
+			} else {
+				let cell = fetchedResultsController.objectAtIndexPath(indexPath!) as Contacts
+				destVC.contact = cell
+			}
 		}
 		else if segue.identifier == "callNow" {
 			let CallVC: CallViewController = segue.destinationViewController as CallViewController
@@ -87,10 +91,12 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 		contact = ABRecordCopyCompositeName(person).takeRetainedValue()
 		let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
 		let entityDescription = NSEntityDescription.entityForName("Contacts", inManagedObjectContext: managedObjectContext)
-		let person = Contacts(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext) as Contacts
+		var person = Contacts(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext) as Contacts
 		person.name = contact as String
+		self.person = person
 		appDelegate.saveContext()   //what is the difference between this line and the one below ???
 		//managedObjectContext.save(nil)
+		performSegueWithIdentifier("showEdit", sender: self)
 	}
 	
 	func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, shouldContinueAfterSelectingPerson person: ABRecordRef!) -> Bool {

@@ -5,9 +5,12 @@ Feature List from Paul
 a. manually add name
 b. dial from app--(url scheme)
 i. dialing automatically creates an entry--(figure out how to do core data in background)
+ii. tapping contact takes you to edit form until a number is given
+iii. add second tab 
 -->current status here<--
-ii. add second tab and array 
-3. handleing edge cases: missed call or leaving a message 
+iv. add "has been called" attribute to organize into 2 seperate tabs 
+
+3. SWIPE ACTION - handleing edge cases: missed call or leaving a message 
 
 a. put them back into the to-call list
 b. mark it as left a message and done
@@ -16,7 +19,7 @@ d. spoke to person, add some notes to the call
 
 
 
-4. logging calls via evernote
+4. Archive: logging calls via evernote
 
 a. time/date
 b. person called
