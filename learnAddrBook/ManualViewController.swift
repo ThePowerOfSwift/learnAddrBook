@@ -27,6 +27,7 @@ class ManualViewController: UIViewController {
 		} else {
 			nameField.text = contact.name
 			memoField.text = contact.memo
+			phoneField.text = contact.phone
 		}
         // Do any additional setup after loading the view
     }
@@ -53,7 +54,8 @@ class ManualViewController: UIViewController {
 		
 		contact.name = nameField.text
 		contact.memo = memoField.text
-
+		contact.phone = phoneField.text
+		
 		appDelegate.saveContext()
 	}
 	
@@ -62,7 +64,7 @@ class ManualViewController: UIViewController {
 
 		contact.name = nameField.text
 		contact.memo = memoField.text
-		
+		contact.phone = phoneField.text
 //		println(contact.name)
 //		println(contact.memo)
 //

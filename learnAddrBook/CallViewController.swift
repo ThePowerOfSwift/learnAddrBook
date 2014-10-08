@@ -9,9 +9,11 @@
 import UIKit
 import CoreData
 
-class CallViewController: UIViewController {
+class CallViewController: UIViewController, NSFetchedResultsControllerDelegate {
 	
 	@IBOutlet weak var numberField: UITextField!
+	let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,6 +25,14 @@ class CallViewController: UIViewController {
     }
     
 	@IBAction func dialPressed(sender: UIButton) {
+		let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+		
+		let entityDescription = NSEntityDescription.entityForName("Contacts", inManagedObjectContext: managedObjectContext!)
+		let contact = Contacts(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext)
+		
+		contact.name = numberField.text
+		appDelegate.saveContext()
+		
 		UIApplication.sharedApplication().openURL(NSURL(string: "tel://3143230873"))
 	}
 }

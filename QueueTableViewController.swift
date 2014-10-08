@@ -46,7 +46,6 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 		}
 		else if segue.identifier == "callNow" {
 			let CallVC: CallViewController = segue.destinationViewController as CallViewController
-			
 		}
 	}
 	

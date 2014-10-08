@@ -8,10 +8,11 @@
 
 import Foundation
 import CoreData
-@objc(Contacts)
+
 class Contacts: NSManagedObject {
 
     @NSManaged var memo: String?
     @NSManaged var name: String
+    @NSManaged var phone: String?
 
 }
