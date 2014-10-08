@@ -68,6 +68,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="4jQ-aV-tzm">
+                        <barButtonItem key="leftBarButtonItem" title="Call" id="1T8-3W-9IL">
+                            <connections>
+                                <action selector="call:" destination="j7M-8l-A2N" id="8GF-Fq-5nK"/>
+                                <segue destination="NWq-hd-e72" kind="show" identifier="callNow" id="XRO-4f-rQb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="b5W-BM-f6I">
                             <connections>
                                 <action selector="addToQueuePressed:" destination="j7M-8l-A2N" id="dIV-3Q-Xmm"/>
@@ -82,6 +88,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk8-WY-meN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="216" y="-95"/>
+        </scene>
+        <!--Call View Controller-->
+        <scene sceneID="Ygg-qb-ZJz">
+            <objects>
+                <viewController id="NWq-hd-e72" customClass="CallViewController" customModule="learnAddrBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="El6-Er-UeQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="0R3-eG-ycP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IYw-ap-6X2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b65-kE-lQk">
+                                <rect key="frame" x="16" y="88" width="233" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnp-qa-3p9">
+                                <rect key="frame" x="263" y="87" width="30" height="30"/>
+                                <state key="normal" title="Dial">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dialPressed:" destination="NWq-hd-e72" eventType="touchUpInside" id="T5O-sJ-oun"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t1E-PZ-WGI"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="numberField" destination="b65-kE-lQk" id="YMO-vG-t33"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIP-Qr-ilJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="216" y="582"/>
         </scene>
         <!--Manual View Controller-->
         <scene sceneID="hJk-xV-vaG">

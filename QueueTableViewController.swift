@@ -32,16 +32,21 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
     }
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		let destVC: ManualViewController = segue.destinationViewController as ManualViewController
 
 		if segue.identifier == "showAddManual" {
+			let destVC: ManualViewController = segue.destinationViewController as ManualViewController
 			destVC.rstring = textField.text
 			destVC.isNew = true
 		} else if segue.identifier == "showEdit" {
+			let destVC: ManualViewController = segue.destinationViewController as ManualViewController
 			destVC.isNew = false
 			let indexPath = tableView.indexPathForSelectedRow()
 			let cell = fetchedResultsController.objectAtIndexPath(indexPath!) as Contacts
 			destVC.contact = cell
+		}
+		else if segue.identifier == "callNow" {
+			let CallVC: CallViewController = segue.destinationViewController as CallViewController
+			
 		}
 	}
 	
@@ -69,6 +74,10 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
         return cell
     }
 	
+	@IBAction func call(sender: UIBarButtonItem) {
+		performSegueWithIdentifier("callNow", sender: self)
+	}
+
 	@IBAction func addToQueuePressed(sender: UIBarButtonItem) {
 		let picker = ABPeoplePickerNavigationController()
 		picker.peoplePickerDelegate = self

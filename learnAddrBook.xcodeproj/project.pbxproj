@@ -18,6 +18,7 @@
 		F6EA15E919E4718400D6092B /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613753719E0A879005CE7EE /* ContactCell.swift */; };
 		F6EA15F319E4740800D6092B /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EA15F219E4740800D6092B /* Contacts.swift */; };
 		F6EA15F419E4756E00D6092B /* ContactModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6EA15EF19E473DE00D6092B /* ContactModel.xcdatamodeld */; };
+		F6F2B47719E4ABA700267EC1 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F2B47619E4ABA700267EC1 /* CallViewController.swift */; };
 		F6F3B15819E46D35005223CF /* QueueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueueTableViewController.swift; path = ../QueueTableViewController.swift; sourceTree = "<group>"; };
 		F6EA15F019E473DE00D6092B /* ContactModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactModel.xcdatamodel; sourceTree = "<group>"; };
 		F6EA15F219E4740800D6092B /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contacts.swift; path = ../Contacts.swift; sourceTree = "<group>"; };
+		F6F2B47619E4ABA700267EC1 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				F632128C19DDB04300AB3648 /* AppDelegate.swift */,
 				F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */,
 				F6A1CD3019E3821B005269A8 /* ManualViewController.swift */,
+				F6F2B47619E4ABA700267EC1 /* CallViewController.swift */,
 				F632129019DDB04300AB3648 /* Main.storyboard */,
 				F632129319DDB04300AB3648 /* Images.xcassets */,
 				F613753719E0A879005CE7EE /* ContactCell.swift */,
@@ -182,6 +185,7 @@
 				TargetAttributes = {
 					F632128619DDB04200AB3648 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 4C8V97R8N3;
 					};
 					F632129B19DDB04300AB3648 = {
 						CreatedOnToolsVersion = 6.0;
@@ -240,6 +244,7 @@
 				F6F3B15819E46D35005223CF /* QueueTableViewController.swift in Sources */,
 				F632128D19DDB04300AB3648 /* AppDelegate.swift in Sources */,
 				F6A1CD3119E3821B005269A8 /* ManualViewController.swift in Sources */,
+				F6F2B47719E4ABA700267EC1 /* CallViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,9 +369,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = learnAddrBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1cc4f200-44a4-4a33-8e01-502ad6ca19d1";
 			};
 			name = Debug;
 		};
@@ -374,9 +382,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = learnAddrBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1cc4f200-44a4-4a33-8e01-502ad6ca19d1";
 			};
 			name = Release;
 		};

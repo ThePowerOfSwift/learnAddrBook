@@ -3,9 +3,8 @@ Feature List from Paul
 1. pick from address book
 2. manually enter a number
 a. manually add name
--->current status here<--
-i. if number wasn't given at the time, tapping name in main list brings you to add a number--(coredata)
 b. dial from app--(url scheme)
+-->current status here<--
 i. dialing automatically creates an entry--(figure out how to do core data in background)
 ii. if number doesn't match a contact, use number as name till user changes it--(use the same value to set 2 diff fields)
 

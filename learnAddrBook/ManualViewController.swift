@@ -27,8 +27,6 @@ class ManualViewController: UIViewController {
 		} else {
 			nameField.text = contact.name
 			memoField.text = contact.memo
-			println(nameField.text)
-			println(memoField.text)
 		}
         // Do any additional setup after loading the view
     }
@@ -56,12 +54,6 @@ class ManualViewController: UIViewController {
 		contact.name = nameField.text
 		contact.memo = memoField.text
 
-		println(contact.name)
-		println(contact.memo)
-
-		println(nameField.text)
-		println(memoField.text)
-
 		appDelegate.saveContext()
 	}
 	
@@ -71,11 +63,11 @@ class ManualViewController: UIViewController {
 		contact.name = nameField.text
 		contact.memo = memoField.text
 		
-		println(contact.name)
-		println(contact.memo)
-
-		println(nameField.text)
-		println(memoField.text)
+//		println(contact.name)
+//		println(contact.memo)
+//
+//		println(nameField.text)
+//		println(memoField.text)
 
 		appDelegate.saveContext()
 	}
