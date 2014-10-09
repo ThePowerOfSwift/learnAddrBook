@@ -15,5 +15,5 @@ class Contacts: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var phone: String?
     @NSManaged var hasCalled: NSNumber
-
+	@NSManaged var firstTime: NSNumber
 }

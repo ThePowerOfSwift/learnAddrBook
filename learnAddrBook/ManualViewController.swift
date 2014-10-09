@@ -23,6 +23,7 @@ class ManualViewController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
+
 		if isNew! {//newly added from textfield
 			nameField.text = rstring!
 		} else if contact.phone? == nil  || contact.phone? == Optional(""){//added from AB, need to take directly here later on
@@ -34,9 +35,13 @@ class ManualViewController: UIViewController {
 			memoField.text = contact.memo
 			phoneField.text = contact.phone
 
-			contact.hasCalled = true
 			appDelegate.saveContext()
-			println("dialing")
+			if contact.firstTime == true {
+				contact.hasCalled = false
+				contact.firstTime = false
+			} else {
+				contact.hasCalled = true
+			}
 			UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(contact.phone!)"))
 		}
     }
