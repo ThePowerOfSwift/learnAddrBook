@@ -34,11 +34,6 @@ class CallViewController: UIViewController, NSFetchedResultsControllerDelegate {
 		contact.phone = numberField.text
 		contact.hasCalled = true
 		appDelegate.saveContext()
-		cleanNum = contact.phone!.stringByReplacingOccurrencesOfString("(", withString: "", options: nil, range: nil)
-		cleanNum = contact.phone!.stringByReplacingOccurrencesOfString(")", withString: "", options: nil, range: nil)
-		cleanNum = contact.phone!.stringByReplacingOccurrencesOfString("-", withString: "", options: nil, range: nil)
-//		cleanNum = contact.phone!.stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil)
-		println("dialing...\(cleanNum)")
-		UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(cleanNum)"))
+		UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(contact.phone)"))
 	}
 }

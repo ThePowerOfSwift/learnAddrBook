@@ -109,9 +109,18 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 		var thePerson = Contacts(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext) as Contacts
 		thePerson.name = contact as String
 		thePerson.phone = phone as? String
-
+//		println(thePerson.phone!)
+//		var num:String = "(314) 323-0873"
+//		var cleanNum = num.stringByReplacingOccurrencesOfString("(", withString: "", options: nil, range: nil)
+//		println(cleanNum)
+//		cleanNum = cleanNum.stringByReplacingOccurrencesOfString(")", withString: "", options: nil, range: nil)
+//		println(cleanNum)
+//		cleanNum = cleanNum.stringByReplacingOccurrencesOfString("-", withString: "", options: nil, range: nil)
+//		println(cleanNum)
+//		cleanNum = cleanNum.stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil)
+//		println(cleanNum)
 		self.person = thePerson
-		appDelegate.saveContext()   //what is the difference between this line and the one below ???
+//		appDelegate.saveContext()   //what is the difference between this line and the one below ???
 		//managedObjectContext.save(nil)
 		performSegueWithIdentifier("showEdit", sender: self)
 	}

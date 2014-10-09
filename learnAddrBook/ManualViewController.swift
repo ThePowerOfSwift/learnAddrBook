@@ -19,7 +19,7 @@ class ManualViewController: UIViewController {
 	@IBOutlet weak var phoneField: UITextField!
 	@IBOutlet weak var textView: UITextView!
 	@IBOutlet weak var datePicker: UIDatePicker!
-	
+		
 	let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
 
 	let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
@@ -38,21 +38,28 @@ class ManualViewController: UIViewController {
 		} else {//dial out
 			nameField.text = contact.name
 			textView.text = contact.memo
-			phoneField.text = contact.phone
-
-			appDelegate.saveContext()
+			
 			if contact.firstTime == true {
 				contact.hasCalled = false
 				contact.firstTime = false
 			} else {
 				contact.hasCalled = true
-				cleanNum = contact.phone!.stringByReplacingOccurrencesOfString("(", withString: "", options: nil, range: nil)
-				cleanNum = contact.phone!.stringByReplacingOccurrencesOfString(")", withString: "", options: nil, range: nil)
-				cleanNum = contact.phone!.stringByReplacingOccurrencesOfString("-", withString: "", options: nil, range: nil)
-//				cleanNum = contact.phone!.stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil)
-				println("dialing...\(cleanNum)")
-				UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(cleanNum)"))
+				UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(phoneField.text)"))
 			}
+			
+			var cleanNum: String = contact.phone!.stringByReplacingOccurrencesOfString("[\\(\\)\\-]", withString: "", options: .RegularExpressionSearch)
+			var final: String = ""
+			var count: Int = 0
+			for char in cleanNum {
+				if String(char) == "1" || String(char) == "2" || String(char) == "3" || String(char) == "4" || String(char) == "5" || String(char) == "6" || String(char) == "7" || String(char) == "8" || String(char) == "8" || String(char) == "0" {
+					final.append(char)
+				}
+				count++
+			}
+			phoneField.text = final
+			
+			appDelegate.saveContext()
+
 		}
     }
 
