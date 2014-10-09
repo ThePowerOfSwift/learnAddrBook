@@ -77,6 +77,16 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 		cell.memoLabel.text = theContact.memo
         return cell
     }
+
+	override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+		return true
+	}
+	
+	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+		if editingStyle == UITableViewCellEditingStyle.Delete {
+			
+		}
+	}
 	
 	@IBAction func call(sender: UIBarButtonItem) {
 		performSegueWithIdentifier("callNow", sender: self)

@@ -13,10 +13,13 @@ class ManualViewController: UIViewController {
 	var rstring: String?
 	var isNew: Bool?
 	var contact: Contacts!
+	var cleanNum: String = ""
+	
 	@IBOutlet weak var nameField: UITextField!
 	@IBOutlet weak var phoneField: UITextField!
-	@IBOutlet weak var memoField: UITextField!
+	@IBOutlet weak var textView: UITextView!
 	@IBOutlet weak var datePicker: UIDatePicker!
+	
 	let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
 
 	let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
@@ -26,13 +29,15 @@ class ManualViewController: UIViewController {
 
 		if isNew! {//newly added from textfield
 			nameField.text = rstring!
-		} else if contact.phone? == nil  || contact.phone? == Optional(""){//added from AB, need to take directly here later on
+
+		} else if contact.phone? == nil  || contact.phone? == Optional(""){
 				nameField.text = contact.name
-				memoField.text = contact.memo
+				textView.text = contact.memo
 				phoneField.text = contact.phone
+				contact.firstTime = false
 		} else {//dial out
 			nameField.text = contact.name
-			memoField.text = contact.memo
+			textView.text = contact.memo
 			phoneField.text = contact.phone
 
 			appDelegate.saveContext()
@@ -41,8 +46,13 @@ class ManualViewController: UIViewController {
 				contact.firstTime = false
 			} else {
 				contact.hasCalled = true
+				cleanNum = contact.phone!.stringByReplacingOccurrencesOfString("(", withString: "", options: nil, range: nil)
+				cleanNum = contact.phone!.stringByReplacingOccurrencesOfString(")", withString: "", options: nil, range: nil)
+				cleanNum = contact.phone!.stringByReplacingOccurrencesOfString("-", withString: "", options: nil, range: nil)
+//				cleanNum = contact.phone!.stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil)
+				println("dialing...\(cleanNum)")
+				UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(cleanNum)"))
 			}
-			UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(contact.phone!)"))
 		}
     }
 
@@ -67,7 +77,7 @@ class ManualViewController: UIViewController {
 		let contact = Contacts(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext)
 		
 		contact.name = nameField.text
-		contact.memo = memoField.text
+		contact.memo = textView.text
 		contact.phone = phoneField.text
 		
 		appDelegate.saveContext()
@@ -77,9 +87,9 @@ class ManualViewController: UIViewController {
 		let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
 
 		contact.name = nameField.text
-		contact.memo = memoField.text
+		contact.memo = textView.text
 		contact.phone = phoneField.text
-
+		contact.firstTime = false
 		appDelegate.saveContext()
 	}
 }

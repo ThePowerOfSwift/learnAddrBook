@@ -8,11 +8,10 @@ i. dialing automatically creates an entry--(figure out how to do core data in ba
 ii. tapping contact takes you to edit form until a number is given
 iii. add second tab 
 iv. add "has been called" attribute
--->current status here<--
 v. organize data into 2 seperate tabs 
 vi. populate phone from AB, not just name
 vii. convert memo textfield into text view
-
+-->current status here<--
 3. SWIPE ACTION - handleing edge cases: missed call or leaving a message 
 
 a. put them back into the to-call list

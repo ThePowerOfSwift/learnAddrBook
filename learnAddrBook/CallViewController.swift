@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class CallViewController: UIViewController, NSFetchedResultsControllerDelegate {
-	
+	var cleanNum: String = ""
 	@IBOutlet weak var numberField: UITextField!
 	let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
 
@@ -34,7 +34,11 @@ class CallViewController: UIViewController, NSFetchedResultsControllerDelegate {
 		contact.phone = numberField.text
 		contact.hasCalled = true
 		appDelegate.saveContext()
-		println("dialing")
-		UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numberField.text)"))
+		cleanNum = contact.phone!.stringByReplacingOccurrencesOfString("(", withString: "", options: nil, range: nil)
+		cleanNum = contact.phone!.stringByReplacingOccurrencesOfString(")", withString: "", options: nil, range: nil)
+		cleanNum = contact.phone!.stringByReplacingOccurrencesOfString("-", withString: "", options: nil, range: nil)
+//		cleanNum = contact.phone!.stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil)
+		println("dialing...\(cleanNum)")
+		UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(cleanNum)"))
 	}
 }
