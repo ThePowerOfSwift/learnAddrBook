@@ -17,12 +17,12 @@ class ManualViewController: UIViewController {
 	@IBOutlet weak var phoneField: UITextField!
 	@IBOutlet weak var memoField: UITextField!
 	@IBOutlet weak var datePicker: UIDatePicker!
-	
+	let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+
 	let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		println(contact.name)
 		if isNew! {//newly added from textfield
 			nameField.text = rstring!
 		} else if contact.phone? == nil  || contact.phone? == Optional(""){//added from AB, need to take directly here later on
@@ -34,6 +34,9 @@ class ManualViewController: UIViewController {
 			memoField.text = contact.memo
 			phoneField.text = contact.phone
 
+			contact.hasCalled = true
+			appDelegate.saveContext()
+			println("dialing")
 			UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(contact.phone!)"))
 		}
     }

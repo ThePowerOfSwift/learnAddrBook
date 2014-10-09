@@ -7,8 +7,11 @@ b. dial from app--(url scheme)
 i. dialing automatically creates an entry--(figure out how to do core data in background)
 ii. tapping contact takes you to edit form until a number is given
 iii. add second tab 
+iv. add "has been called" attribute
 -->current status here<--
-iv. add "has been called" attribute to organize into 2 seperate tabs 
+v. organize data into 2 seperate tabs 
+vi. populate phone from AB, not just name
+vii. convert memo textfield into text view
 
 3. SWIPE ACTION - handleing edge cases: missed call or leaving a message 
 
@@ -16,8 +19,6 @@ a. put them back into the to-call list
 b. mark it as left a message and done
 c. no answer so can i text or imessage them instead
 d. spoke to person, add some notes to the call
-
-
 
 4. Archive: logging calls via evernote
 

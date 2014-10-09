@@ -36,7 +36,6 @@ class HaveCalledTableViewController: UITableViewController, UITableViewDataSourc
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 		let numberOfSections = fetchedResultsController.sections?.count
 		return numberOfSections!
-
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,8 +44,8 @@ class HaveCalledTableViewController: UITableViewController, UITableViewDataSourc
     }
 	
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let theContact = fetchedResultsController.objectAtIndexPath(indexPath) as Contacts
 		
+		let theContact = fetchedResultsController.objectAtIndexPath(indexPath) as Contacts
 		var cell: ModTableViewCell = tableView.dequeueReusableCellWithIdentifier("modCell") as ModTableViewCell
 		cell.nameLabel.text = theContact.name
 		cell.memoLabel.text = theContact.memo
@@ -61,6 +60,7 @@ class HaveCalledTableViewController: UITableViewController, UITableViewDataSourc
 		let fetchRequest = NSFetchRequest(entityName: "Contacts")
 		let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
 		fetchRequest.sortDescriptors = [sortDescriptor]
+		fetchRequest.predicate = NSPredicate(format: "hasCalled = true")
 		return fetchRequest
 	}
 	

@@ -15,11 +15,11 @@
 		F632129719DDB04300AB3648 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F632129519DDB04300AB3648 /* LaunchScreen.xib */; };
 		F63212A319DDB04300AB3648 /* learnAddrBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */; };
 		F6A1CD3119E3821B005269A8 /* ManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A1CD3019E3821B005269A8 /* ManualViewController.swift */; };
+		F6A2B0E119E5CD22000E2B72 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A2B0E019E5CD22000E2B72 /* Contacts.swift */; };
 		F6EA15E919E4718400D6092B /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613753719E0A879005CE7EE /* ContactCell.swift */; };
 		F6EA15F419E4756E00D6092B /* ContactModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F6EA15EF19E473DE00D6092B /* ContactModel.xcdatamodeld */; };
 		F6EDAD6019E4E70B002EA5A4 /* HaveCalledTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EDAD5F19E4E70B002EA5A4 /* HaveCalledTableViewController.swift */; };
 		F6EDAD6419E4EF21002EA5A4 /* ModTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EDAD6319E4EF21002EA5A4 /* ModTableViewCell.swift */; };
-		F6F0001419E4D33100DC2BE5 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F0001319E4D33100DC2BE5 /* Contacts.swift */; };
 		F6F2B47719E4ABA700267EC1 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F2B47619E4ABA700267EC1 /* CallViewController.swift */; };
 		F6F3B15819E46D35005223CF /* QueueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -49,11 +49,11 @@
 		F63212A119DDB04300AB3648 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F63212A219DDB04300AB3648 /* learnAddrBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = learnAddrBookTests.swift; sourceTree = "<group>"; };
 		F6A1CD3019E3821B005269A8 /* ManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualViewController.swift; sourceTree = "<group>"; };
+		F6A2B0E019E5CD22000E2B72 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		F6A898FA19E0C79C00421DD2 /* QueueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueueTableViewController.swift; path = ../QueueTableViewController.swift; sourceTree = "<group>"; };
 		F6EA15F019E473DE00D6092B /* ContactModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactModel.xcdatamodel; sourceTree = "<group>"; };
 		F6EDAD5F19E4E70B002EA5A4 /* HaveCalledTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaveCalledTableViewController.swift; sourceTree = "<group>"; };
 		F6EDAD6319E4EF21002EA5A4 /* ModTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModTableViewCell.swift; sourceTree = "<group>"; };
-		F6F0001319E4D33100DC2BE5 /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contacts.swift; path = ../Contacts.swift; sourceTree = "<group>"; };
 		F6F2B47619E4ABA700267EC1 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +108,7 @@
 				F6EDAD6319E4EF21002EA5A4 /* ModTableViewCell.swift */,
 				F632129519DDB04300AB3648 /* LaunchScreen.xib */,
 				F6EA15EF19E473DE00D6092B /* ContactModel.xcdatamodeld */,
-				F6F0001319E4D33100DC2BE5 /* Contacts.swift */,
+				F6A2B0E019E5CD22000E2B72 /* Contacts.swift */,
 				F632128A19DDB04200AB3648 /* Supporting Files */,
 			);
 			path = learnAddrBook;
@@ -244,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A2B0E119E5CD22000E2B72 /* Contacts.swift in Sources */,
 				F6EA15F419E4756E00D6092B /* ContactModel.xcdatamodeld in Sources */,
 				F6EA15E919E4718400D6092B /* ContactCell.swift in Sources */,
 				F6F3B15819E46D35005223CF /* QueueTableViewController.swift in Sources */,
@@ -252,7 +253,6 @@
 				F6A1CD3119E3821B005269A8 /* ManualViewController.swift in Sources */,
 				F6F2B47719E4ABA700267EC1 /* CallViewController.swift in Sources */,
 				F6EDAD6019E4E70B002EA5A4 /* HaveCalledTableViewController.swift in Sources */,
-				F6F0001419E4D33100DC2BE5 /* Contacts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

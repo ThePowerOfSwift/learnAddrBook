@@ -13,6 +13,7 @@ import CoreData
 class QueueTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, NSFetchedResultsControllerDelegate {
 
 	var contact: ABMultiValueRef!
+	var phone: ABMultiValueRef!
 	let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
 	var fetchedResultsController:NSFetchedResultsController = NSFetchedResultsController()
 	var person: Contacts!
@@ -89,11 +90,17 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 
 	func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecordRef!) {
 		contact = ABRecordCopyCompositeName(person).takeRetainedValue()
+		var phones: ABMultiValueRef = ABRecordCopyValue(person, kABPersonPhoneProperty).takeRetainedValue()
+
+		phone = ABMultiValueCopyValueAtIndex(phones, 0 as CFIndex).takeRetainedValue()
+		
 		let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
 		let entityDescription = NSEntityDescription.entityForName("Contacts", inManagedObjectContext: managedObjectContext)
-		var person = Contacts(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext) as Contacts
-		person.name = contact as String
-		self.person = person
+		var thePerson = Contacts(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext) as Contacts
+		thePerson.name = contact as String
+		thePerson.phone = phone as? String
+
+		self.person = thePerson
 		appDelegate.saveContext()   //what is the difference between this line and the one below ???
 		//managedObjectContext.save(nil)
 		performSegueWithIdentifier("showEdit", sender: self)
@@ -118,6 +125,7 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 		let fetchRequest = NSFetchRequest(entityName: "Contacts")
 		let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
 		fetchRequest.sortDescriptors = [sortDescriptor]
+		fetchRequest.predicate = NSPredicate(format: "hasCalled = false")
 		return fetchRequest
 	}
 
