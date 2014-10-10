@@ -12,6 +12,7 @@ import CoreData
 class ManualViewController: UIViewController {
 	var rstring: String?
 	var isNew: Bool?
+	var isEdit: Bool = false
 	var contact: Contacts!
 	var cleanNum: String = ""
 	
@@ -43,8 +44,10 @@ class ManualViewController: UIViewController {
 				contact.hasCalled = false
 				contact.firstTime = false
 			} else {
-				contact.hasCalled = true
-				UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(phoneField.text)"))
+				if isEdit == false{
+					contact.hasCalled = true
+					UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(phoneField.text)"))
+				}
 			}
 			
 			var cleanNum: String = contact.phone!.stringByReplacingOccurrencesOfString("[\\(\\)\\-]", withString: "", options: .RegularExpressionSearch)

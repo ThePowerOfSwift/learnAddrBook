@@ -17,6 +17,8 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
 	var fetchedResultsController:NSFetchedResultsController = NSFetchedResultsController()
 	var person: Contacts!
+	var simpleEdit: Bool = false
+	
 	@IBOutlet weak var textField: UITextField!
 	
     override func viewDidLoad() {
@@ -47,9 +49,12 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 			} else {
 				let cell = fetchedResultsController.objectAtIndexPath(indexPath!) as Contacts
 				destVC.contact = cell
+				if simpleEdit {
+					destVC.isEdit = true
+					simpleEdit = false
+				}
 			}
-		}
-		else if segue.identifier == "callNow" {
+		} else if segue.identifier == "callNow" {
 			let CallVC: CallViewController = segue.destinationViewController as CallViewController
 		}
 	}
@@ -82,9 +87,30 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 		return true
 	}
 	
+	override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+		let editAction = UITableViewRowAction(style: .Normal, title: "edit", handler: {
+			(action, indexPath) -> Void in
+			println("edit")
+			self.simpleEdit = true
+			self.performSegueWithIdentifier("showEdit", sender: self)
+			}
+		)
+		editAction.backgroundColor = UIColor.blueColor()
+		let deleteAction = UITableViewRowAction(style: .Normal, title: "delete", handler: {
+			(action, indexPath) -> Void in
+			self.tableView(self.tableView, commitEditingStyle: .Delete, forRowAtIndexPath: indexPath)
+			}
+		)
+		//buttons get displayed in backwards order in app
+		return [deleteAction, editAction]
+		
+	}
+	
 	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
 		if editingStyle == UITableViewCellEditingStyle.Delete {
-			
+			let managedObject: NSManagedObject = fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+			managedObjectContext.deleteObject(managedObject)
+			(UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
 		}
 	}
 	
@@ -109,19 +135,7 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 		var thePerson = Contacts(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext) as Contacts
 		thePerson.name = contact as String
 		thePerson.phone = phone as? String
-//		println(thePerson.phone!)
-//		var num:String = "(314) 323-0873"
-//		var cleanNum = num.stringByReplacingOccurrencesOfString("(", withString: "", options: nil, range: nil)
-//		println(cleanNum)
-//		cleanNum = cleanNum.stringByReplacingOccurrencesOfString(")", withString: "", options: nil, range: nil)
-//		println(cleanNum)
-//		cleanNum = cleanNum.stringByReplacingOccurrencesOfString("-", withString: "", options: nil, range: nil)
-//		println(cleanNum)
-//		cleanNum = cleanNum.stringByReplacingOccurrencesOfString(" ", withString: "", options: nil, range: nil)
-//		println(cleanNum)
 		self.person = thePerson
-//		appDelegate.saveContext()   //what is the difference between this line and the one below ???
-		//managedObjectContext.save(nil)
 		performSegueWithIdentifier("showEdit", sender: self)
 	}
 	
