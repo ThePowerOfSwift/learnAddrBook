@@ -31,6 +31,13 @@ class HaveCalledTableViewController: UITableViewController, UITableViewDataSourc
         // Dispose of any resources that can be recreated.
     }
 
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "undo" {
+			let destVC: QueueTableViewController = segue.destinationViewController as QueueTableViewController
+			
+		}
+	}
+	
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -50,6 +57,36 @@ class HaveCalledTableViewController: UITableViewController, UITableViewDataSourc
 		cell.nameLabel.text = theContact.name
 		cell.memoLabel.text = theContact.memo
 		return cell
+	}
+	
+	override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+		return true
+	}
+	
+	override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+		let undoAction = UITableViewRowAction(style: .Normal, title: "undo", handler: {
+			(action, indexPath) -> Void in
+			let theContact:Contacts = self.fetchedResultsController.objectAtIndexPath(indexPath) as Contacts
+			theContact.hasCalled = false
+			}
+		)
+		undoAction.backgroundColor = UIColor.blueColor()
+		let deleteAction = UITableViewRowAction(style: .Normal, title: "delete", handler: {
+			(action, indexPath) -> Void in
+			self.tableView(self.tableView, commitEditingStyle: .Delete, forRowAtIndexPath: indexPath)
+			}
+		)
+		//buttons get displayed in backwards order in app
+		return [deleteAction, undoAction]
+		}
+	
+	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+		if editingStyle == UITableViewCellEditingStyle.Delete {
+			let managedObject: NSManagedObject = fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+			managedObjectContext.deleteObject(managedObject)
+			(UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+		}
+
 	}
 	
 	func controllerDidChangeContent(controller: NSFetchedResultsController) {

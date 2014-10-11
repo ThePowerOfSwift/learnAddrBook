@@ -18,7 +18,8 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	var fetchedResultsController:NSFetchedResultsController = NSFetchedResultsController()
 	var person: Contacts!
 	var simpleEdit: Bool = false
-	
+	var actionRow: NSIndexPath!
+	var action:Bool = false
 	@IBOutlet weak var textField: UITextField!
 	
     override func viewDidLoad() {
@@ -35,24 +36,49 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
     }
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
+/*
+1.
+manually adding by clicking add button
+2.
+loaded directly by AB segue
+3.
+edit b/c no phone number present
+4.
+arbitrary edit
+5. 
+dial out
+*/
 		if segue.identifier == "showAddManual" {
+			println("showAddmanual")
 			let destVC: ManualViewController = segue.destinationViewController as ManualViewController
 			destVC.rstring = textField.text
-			destVC.isNew = true
+			destVC.isNew = true//case 1
+			destVC.isEdit = false
 		} else if segue.identifier == "showEdit" {
+			println("showedit")
 			let destVC: ManualViewController = segue.destinationViewController as ManualViewController
 			destVC.isNew = false
 			let indexPath = tableView.indexPathForSelectedRow()
 			if indexPath? == nil {
-				destVC.contact = person
+				if action {
+					if simpleEdit {
+						println("case4--pass cell & simple edit true")
+						let cell = fetchedResultsController.objectAtIndexPath(actionRow) as Contacts
+						destVC.contact = cell
+						destVC.isEdit = true//case4
+						simpleEdit = false
+					}
+				} else {
+					println("case2--directly send person--no cell")
+					destVC.contact = person//case2
+					destVC.isEdit = false
+				}
 			} else {
 				let cell = fetchedResultsController.objectAtIndexPath(indexPath!) as Contacts
-				destVC.contact = cell
-				if simpleEdit {
-					destVC.isEdit = true
-					simpleEdit = false
-				}
+				println("case3--send in a cell")
+				destVC.contact = cell//case3
+				destVC.isEdit = false
+				//if everything else is false then case5
 			}
 		} else if segue.identifier == "callNow" {
 			let CallVC: CallViewController = segue.destinationViewController as CallViewController
@@ -90,9 +116,11 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
 		let editAction = UITableViewRowAction(style: .Normal, title: "edit", handler: {
 			(action, indexPath) -> Void in
-			println("edit")
 			self.simpleEdit = true
+			self.action = true
+			self.actionRow = indexPath
 			self.performSegueWithIdentifier("showEdit", sender: self)
+			self.action = false
 			}
 		)
 		editAction.backgroundColor = UIColor.blueColor()

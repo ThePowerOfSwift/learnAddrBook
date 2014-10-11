@@ -11,13 +11,14 @@ iv. add "has been called" attribute
 v. organize data into 2 seperate tabs 
 vi. populate phone from AB, not just name
 vii. convert memo textfield into text view
--->current status here<--
+
 3. SWIPE ACTION - handleing edge cases: missed call or leaving a message 
 
-a. put them back into the to-call list
-b. mark it as left a message and done
-c. no answer so can i text or imessage them instead
-d. spoke to person, add some notes to the call
+a. spoke to person, add some notes to the call
+b. put them back into the to-call list
+-->current status here<--
+c. mark it as left a message and done
+d. no answer so can i text or imessage them instead
 
 4. Archive: logging calls via evernote
 
