@@ -34,6 +34,6 @@ class CallViewController: UIViewController, NSFetchedResultsControllerDelegate {
 		contact.phone = numberField.text
 		contact.hasCalled = true
 		appDelegate.saveContext()
-		UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(contact.phone)"))
+		UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(numberField.text)"))
 	}
 }
