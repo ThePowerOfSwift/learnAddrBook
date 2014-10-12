@@ -123,14 +123,44 @@ dial out
 			self.action = false
 			}
 		)
-		editAction.backgroundColor = UIColor.blueColor()
+		editAction.backgroundColor = UIColor.greenColor()
+		
 		let deleteAction = UITableViewRowAction(style: .Normal, title: "delete", handler: {
 			(action, indexPath) -> Void in
 			self.tableView(self.tableView, commitEditingStyle: .Delete, forRowAtIndexPath: indexPath)
 			}
 		)
+		deleteAction.backgroundColor = UIColor.redColor()
+		
+		let moreAction = UITableViewRowAction(style: .Normal, title: "more", handler: {
+			(action, indexPath) -> Void in
+			let actionSheetController: UIAlertController = UIAlertController(title: "More", message: "Extra Options--Now half off!", preferredStyle: .ActionSheet)
+			let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+				//dismiss action sheet
+				//doing nothing also makes it dismiss
+			}
+			actionSheetController.addAction(cancelAction)
+			let blue: UIAlertAction = UIAlertAction(title: "Turn it blue", style: .Default) { action -> Void in
+				//Turn the cell blue
+				var cell: ContactCell = self.tableView.cellForRowAtIndexPath(indexPath) as ContactCell
+				cell.backgroundColor = UIColor.blueColor()
+			}
+			actionSheetController.addAction(blue)
+			let white: UIAlertAction = UIAlertAction(title: "Turn it white", style: .Default) { action -> Void in
+				//Turn the cell white
+				var cell: ContactCell = self.tableView.cellForRowAtIndexPath(indexPath) as ContactCell
+				cell.backgroundColor = UIColor.whiteColor()
+			}
+			actionSheetController.addAction(white)
+//			//We need to provide a popover sourceView when using it on iPad
+//			actionSheetController.popoverPresentationController?.sourceView = tableView as UITableView;
+			
+			//Present the AlertController
+			self.presentViewController(actionSheetController, animated: true, completion: nil)
+		})
+		moreAction.backgroundColor = UIColor.grayColor()
 		//buttons get displayed in backwards order in app
-		return [deleteAction, editAction]
+		return [deleteAction, moreAction, editAction]
 		
 	}
 	
