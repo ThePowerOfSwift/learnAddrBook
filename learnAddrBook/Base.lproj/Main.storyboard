@@ -69,7 +69,6 @@
                         <connections>
                             <outlet property="dataSource" destination="j7M-8l-A2N" id="Kj7-xZ-GfU"/>
                             <outlet property="delegate" destination="j7M-8l-A2N" id="jVo-di-Dd4"/>
-                            <outletCollection property="gestureRecognizers" destination="KfD-mB-uOp" appends="YES" id="Au5-oJ-gVJ"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="4jQ-aV-tzm">
@@ -91,7 +90,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk8-WY-meN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="KfD-mB-uOp"/>
             </objects>
             <point key="canvasLocation" x="1028" y="-95"/>
         </scene>
