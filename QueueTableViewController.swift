@@ -10,7 +10,7 @@ import UIKit
 import AddressBookUI
 import CoreData
 
-class QueueTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, NSFetchedResultsControllerDelegate {
+class QueueTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, ABPeoplePickerNavigationControllerDelegate, NSFetchedResultsControllerDelegate, UITextFieldDelegate {
 
 	var contact: ABMultiValueRef!
 	var phone: ABMultiValueRef!
@@ -24,31 +24,27 @@ class QueueTableViewController: UITableViewController, UITableViewDataSource, UI
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		textField.delegate = self
 		fetchedResultsController = getFetchResultsController()
 		fetchedResultsController.delegate = self
 		fetchedResultsController.performFetch(nil)
     }
+	
+	override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+		super.touchesBegan(touches, withEvent: event)
+		let touch = event.allTouches()?.anyObject() as UITouch
+		self.tableView.endEditing(true)
 
+	}
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-/*
-1.
-manually adding by clicking add button
-2.
-loaded directly by AB segue
-3.
-edit b/c no phone number present
-4.
-arbitrary edit
-5. 
-dial out
-*/
 		if segue.identifier == "showAddManual" {
+			
 			println("showAddmanual")
 			let destVC: ManualViewController = segue.destinationViewController as ManualViewController
 			destVC.rstring = textField.text
@@ -85,6 +81,11 @@ dial out
 		}
 	}
 	
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
+	
 	@IBAction func addManuallyPressed(sender: UIButton) {
 	}
     // MARK: - Table view data source
@@ -102,11 +103,10 @@ dial out
 	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		let theContact = fetchedResultsController.objectAtIndexPath(indexPath) as Contacts
-		
 		var cell: ContactCell = tableView.dequeueReusableCellWithIdentifier("listCell") as ContactCell
 		cell.nameLabel.text = theContact.name
 		cell.memoLabel.text = theContact.memo
-        return cell
+		return cell
     }
 
 	override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

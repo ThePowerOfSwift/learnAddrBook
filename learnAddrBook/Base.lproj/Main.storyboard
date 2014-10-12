@@ -12,15 +12,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="CFH-EY-ONa">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nn1-bm-LA2" customClass="PassingText" customModule="learnAddrBook" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="7" width="245" height="30"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9a-oo-4wS">
                                     <rect key="frame" x="261" y="8" width="51" height="30"/>
                                     <state key="normal" title="Add">
@@ -31,8 +27,14 @@
                                         <segue destination="R6I-fL-x6v" kind="show" identifier="showAddManual" id="wCd-hv-dBd"/>
                                     </connections>
                                 </button>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nn1-bm-LA2">
+                                    <rect key="frame" x="8" y="7" width="245" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <gestureRecognizers/>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" id="Oh1-ck-CAM" customClass="ContactCell" customModule="learnAddrBook" customModuleProvider="target">
@@ -54,7 +56,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <gestureRecognizers/>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="memoLabel" destination="JRx-XP-Yu9" id="hkP-W3-qfO"/>
                                     <outlet property="nameLabel" destination="KVa-eI-Znh" id="HS0-uT-JKm"/>
@@ -65,6 +69,7 @@
                         <connections>
                             <outlet property="dataSource" destination="j7M-8l-A2N" id="Kj7-xZ-GfU"/>
                             <outlet property="delegate" destination="j7M-8l-A2N" id="jVo-di-Dd4"/>
+                            <outletCollection property="gestureRecognizers" destination="KfD-mB-uOp" appends="YES" id="Au5-oJ-gVJ"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="4jQ-aV-tzm">
@@ -86,6 +91,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk8-WY-meN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KfD-mB-uOp"/>
             </objects>
             <point key="canvasLocation" x="1028" y="-95"/>
         </scene>
@@ -312,6 +318,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wCd-hv-dBd"/>
+        <segue reference="vw7-dS-reB"/>
     </inferredMetricsTieBreakers>
 </document>

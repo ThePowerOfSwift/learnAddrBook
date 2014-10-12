@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 //should really be called detailvc
-class ManualViewController: UIViewController {
+class ManualViewController: UIViewController, UITextFieldDelegate {
 	var rstring: String?
 	var isNew: Bool?
 	var isEdit: Bool?
@@ -27,6 +27,9 @@ class ManualViewController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
+		nameField.delegate = self
+		phoneField.delegate = self
+		
 		println(isEdit!)
 
 		if isNew! {
@@ -130,7 +133,15 @@ class ManualViewController: UIViewController {
 		contact.firstTime = false
 		appDelegate.saveContext()
 	}
+	
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
+
 }
+
+
 /*
 if isNew! {//newly added from textfield
 nameField.text = rstring!//case1
