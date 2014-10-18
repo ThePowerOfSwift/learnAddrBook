@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/stanchiang/learnAddrBook.png?label=ready&title=Ready)](https://waffle.io/stanchiang/learnAddrBook)
 Feature List from Paul
 
 1. pick from address book
